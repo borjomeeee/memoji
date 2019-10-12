@@ -1,0 +1,121 @@
+body
+{
+    padding: 0;
+    margin: 0;
+}
+
+.window
+{
+    font-family: Arial;
+    color: #434344;
+
+    background: #CFD0CF;
+    min-height: 1000px;
+}
+
+.window__head
+{
+    text-align: center;
+
+    font-weight: bold;
+    font-size: 42px;
+
+    padding: 45px 0px;
+}
+
+.window__game
+{
+    display: grid;
+    grid-template-columns: repeat(4, 130px);
+    grid-template-rows: repeat(3, 130px);
+    gap: 25px;
+
+    justify-content: center;
+}
+
+.background
+{
+    height: 100%;
+}
+
+.rabbit
+{
+    background: url('../img/rabbit.png') center center no-repeat / 50%;
+}
+
+.bear
+{
+    background: url('../img/bear.png') center center no-repeat;
+}
+
+.fox
+{
+    background: url('../img/fox.png') center center no-repeat;
+}
+
+.lion
+{
+    background: url('../img/lion.png') center center no-repeat;
+}
+
+.monkey
+{
+    background: url('../img/monkey.png') center center no-repeat;
+}
+
+.pig
+{
+    background: url('../img/pig.png') center center no-repeat;
+}
+
+.gradient
+{
+    border-radius: 5px;
+    
+    background: linear-gradient(45deg, #22ab93 0%, #19668d 100%);
+}
+
+.game__card
+{
+    content: "";
+    width: 130px;
+    height: 130px;
+
+    position: relative;
+    perspective: 600px;
+}
+
+.card__top-side, 
+.card__down-side
+{
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+
+    box-sizing: border-box;
+    box-shadow: 1px 1px 5px #434344;
+
+    border: 5px solid #fff;
+    border-radius: 10px;
+
+    transition: .5s;
+    backface-visibility: hidden;
+}
+
+.card__top-side
+{
+    background-color: #fff;
+
+    transform: rotateY(180deg);
+}
+
+.game__card.game__card_show .card__top-side
+{
+    transform: rotateY(360deg);
+}
+
+.game__card.game__card_show .card__down-side
+{
+    transform: rotateY(180deg);
+}
