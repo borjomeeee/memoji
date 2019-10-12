@@ -8,9 +8,9 @@
     <title>Memoji</title>
 </head>
 <body>
-    <div class="window">
-        <div class="window__head">Memoji</div>
-        <div class="window__game">
+    <div class="window__game">
+        <div class="game__head">Memoji</div>
+        <div class="game__cards">
             <div class="game__card">
                 <div class="card__down-side">
                     <div class="background gradient"></div>
@@ -117,6 +117,33 @@
                 <div class="card__top-side">
                     <div class="background"></div>
                 </div>
+            </div>
+        </div>
+
+        <div class="window__timer">
+            <span id="minutes">00</span>:<span id="seconds">00</span>
+        </div>
+
+        <div id="win-notification" class="window__notification hidden">
+            <div class="notification__block">
+                <div class="notification__head">
+                    <span>W</span><!--
+                 --><span>i</span><!--
+                 --><span>n</span>
+                </div>
+                <button class="notification__submit">Play again</button>
+            </div>
+        </div>
+    
+        <div id="lose-notification" class="window__notification hidden">
+            <div class="notification__block">
+                <div class="notification__head">
+                    <span>L</span>
+                    <span>o</span>
+                    <span>s</span>
+                    <span>e</span>
+                </div>
+                <button class="notification__submit">Play again</button>
             </div>
         </div>
     </div>

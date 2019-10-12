@@ -2,29 +2,126 @@ body
 {
     padding: 0;
     margin: 0;
-}
 
-.window
-{
     font-family: Arial;
+    font-weight: bold;
+
     color: #434344;
 
-    background: #CFD0CF;
-    min-height: 1000px;
+    min-width: 600px;
 }
 
-.window__head
+.hidden
+{
+    z-index: -1;
+    opacity: 0;
+}
+
+.window__game
+{
+    position: relative;
+
+    background: #CFD0CF;
+
+    min-height: 100vh;
+}
+
+.window__timer
+{
+    margin-top: 30px;
+    text-align: center;
+
+    font-size: 32px;
+    line-height: 37px;
+}
+
+.window__notification
+{
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+
+    display: grid;
+    grid-template-columns: 1.5fr minmax(350px, 1fr) 1.5fr;
+    grid-template-areas: ". notification .";
+    align-items: center;
+}
+
+.window__notification::before
+{
+    content: "";
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+
+    background-color: #000;
+    opacity: 0.1;
+}
+
+.notification__block
+{
+    grid-area: notification;
+    background-color: #fff;
+
+    padding: 30px 0px;
+
+    text-align: center;
+
+    z-index: 4000;
+}
+
+.notification__head
+{
+    font-size: 48px;
+    
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    justify-content: center;
+}
+
+.notification__submit
+{
+    height: 40px;
+
+    font-family: Arial;
+    font-size: 20px;
+
+    color: #fff;
+
+    margin: 40px auto 0px auto;
+    padding: 0px 30px;
+
+    background: linear-gradient(225deg, #22ab93 0%, #19668d 100%);
+
+    border: none;
+    border-radius: 10px;
+
+    cursor: pointer;
+    outline: none;
+
+    box-shadow: 1px 1px 1px #434344;
+}
+
+.notification__submit:focus
+{
+    box-shadow: inset 2px 1px 8px #434344;
+}
+
+.game__head
 {
     text-align: center;
 
-    font-weight: bold;
     font-size: 42px;
     line-height: 47px;
 
     padding: 45px 0px;
 }
 
-.window__game
+.game__cards
 {
     display: grid;
     grid-template-columns: repeat(4, 130px);
@@ -80,11 +177,11 @@ body
 .game__card
 {
     content: "";
-    width: 130px;
-    height: 130px;
 
     position: relative;
     perspective: 600px;
+
+    cursor: pointer;
 }
 
 .card__top-side, 
@@ -112,16 +209,16 @@ body
     transform: rotateY(180deg);
 }
 
-.game__card.game__card_show .card__top-side,
-.game__card.game__card_success .card__top-side,
-.game__card.game__card_error .card__top-side
+.game__card_show .card__top-side,
+.game__card_success .card__top-side,
+.game__card_error .card__top-side
 {
     transform: rotateY(360deg);
 }
 
-.game__card.game__card_show .card__down-side,
-.game__card.game__card_success .card__down-side,
-.game__card.game__card_error .card__down-side
+.game__card_show .card__down-side,
+.game__card_success .card__down-side,
+.game__card_error .card__down-side
 {
     transform: rotateY(180deg);
 }
@@ -130,10 +227,44 @@ body
 {
     background-color: #5AD66F;
     border: 5px solid #5AD66F;
+
+    cursor: default;
 }
 
 .game__card_error .card__top-side
 {
     background-color: #F44336;
     border: 5px solid #F44336;
+
+    cursor: default;
+}
+
+.notification__head span:nth-child(1) 
+{
+    animation: anim 1s infinite;
+}
+
+.notification__head span:nth-child(2) 
+{
+    animation: anim 1s infinite 0.15s;
+}
+
+.notification__head span:nth-child(3) 
+{
+    animation: anim 1s infinite 0.3s;
+}
+
+.notification__head span:nth-child(4) 
+{
+    animation: anim 1s infinite 0.45s;
+}
+
+@keyframes anim {
+    from {
+        transform: scaleY(1) translateY(0);
+    } 66% {
+        transform: scaleY(1.5) translateY(-15px);
+    } to {
+        transform: scaleY(1) translateY(0);
+    }
 }
