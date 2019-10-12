@@ -19,6 +19,7 @@ body
 
     font-weight: bold;
     font-size: 42px;
+    line-height: 47px;
 
     padding: 45px 0px;
 }
@@ -38,34 +39,34 @@ body
     height: 100%;
 }
 
-.rabbit
+.rabbit .card__top-side .background
 {
     background: url('../img/rabbit.png') center center no-repeat / 50%;
 }
 
-.bear
+.bear .card__top-side .background
 {
-    background: url('../img/bear.png') center center no-repeat;
+    background: url('../img/bear.png') center center no-repeat / 50%;
 }
 
-.fox
+.fox .card__top-side .background
 {
-    background: url('../img/fox.png') center center no-repeat;
+    background: url('../img/fox.png') center center no-repeat / 50%;
 }
 
-.lion
+.lion .card__top-side .background
 {
-    background: url('../img/lion.png') center center no-repeat;
+    background: url('../img/lion.png') center center no-repeat / 50%;
 }
 
-.monkey
+.monkey .card__top-side .background
 {
-    background: url('../img/monkey.png') center center no-repeat;
+    background: url('../img/monkey.png') center center no-repeat / 50%;
 }
 
-.pig
+.pig .card__top-side .background
 {
-    background: url('../img/pig.png') center center no-repeat;
+    background: url('../img/pig.png') center center no-repeat / 50%;
 }
 
 .gradient
@@ -110,12 +111,28 @@ body
     transform: rotateY(180deg);
 }
 
-.game__card.game__card_show .card__top-side
+.game__card.game__card_show .card__top-side,
+.game__card.game__card_success .card__top-side,
+.game__card.game__card_error .card__top-side
 {
     transform: rotateY(360deg);
 }
 
-.game__card.game__card_show .card__down-side
+.game__card.game__card_show .card__down-side,
+.game__card.game__card_success .card__down-side,
+.game__card.game__card_error .card__down-side
 {
     transform: rotateY(180deg);
+}
+
+.game__card_success .card__top-side
+{
+    background-color: #5AD66F;
+    border: 5px solid #5AD66F;
+}
+
+.game__card_error .card__top-side
+{
+    background-color: #F44336;
+    border: 5px solid #F44336;
 }
