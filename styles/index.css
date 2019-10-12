@@ -37,6 +37,7 @@ body
 .background
 {
     height: 100%;
+    box-sizing: border-box;
 }
 
 .rabbit .card__top-side .background
